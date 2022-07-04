@@ -1,0 +1,52 @@
+{
+	"name": "textual",
+	"version": "0.0.1",
+	"publisher": "cyberdelia",
+	"repository": "https://github.com/cyberdelia/textual-vscode",
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"title": "Enable Textual",
+				"command": "textual.enableTextual",
+				"category": "Textual"
+			},
+			{
+				"title": "Disable Textual",
+				"command": "textual.disableTextual",
+				"category": "Textual"
+			}
+		],
+		"configuration": {
+			"properties": {
+				"textual.enableTextual": {
+					"type": "boolean",
+					"default": true
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.7",
+		"@types/vscode": "^1.34.0",
+		"@typescript-eslint/eslint-plugin": "^5.30.0",
+		"@typescript-eslint/parser": "^5.30.0",
+		"eslint": "^8.13.0",
+		"typescript": "^4.7.2"
+	},
+	"dependencies": {
+		"text-readability": "^1.0.5"
+	}
+}
